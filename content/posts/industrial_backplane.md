@@ -25,7 +25,7 @@ By convention the CPU will be plugged into slot 1 and the PSU will be plugged in
 this is just by convention and allowed space the backplane board have none of these restrictions
 built in.
 
-![Backplanev00](/gallery/backplanev00.jpeg)
+![Backplanev00](/AkadupTinker/gallery/backplanev00.jpeg)
 
 # CPU PCB (RPI and STM32)
 
@@ -41,6 +41,6 @@ Some features I tried to nail on this one:
 By convention the CPU will be plugged into slot 1 and as explained above the backplane has no restriction that
 forces this other than physical space.
 
-![Cpu_STM32v00](/gallery/cpu_stm32v00.jpeg)
+![Cpu_STM32v00](/AkadupTinker/gallery/cpu_stm32v00.jpeg)
 
 ### __And Thats it until the next one.__

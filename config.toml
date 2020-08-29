@@ -18,7 +18,7 @@ pygmentsCodefences       = true
 
 # Metadata for Open Graph and Twitter
     description          = "The site with Tinker projects"          # Max 160 characters show in search results
-    images               = ["/images/wolf-track-512-317041.png"]    # Image that shows on Twitter cards and Open Graph links to the site
+    images               = ["/AkadupTinker/images/wolf-track-512-317041.png"]    # Image that shows on Twitter cards and Open Graph links to the site
     title                = "AkadupTinker"
     # rss                = ""
 

@@ -6,15 +6,38 @@
     <description>Recent content in hardware on Akadup Tinker Site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 08 Mar 2020 11:38:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 30 Aug 2020 09:45:00 +1200</lastBuildDate>
     
 	<atom:link href="https://waynedupreez1.github.io/AkadupTinker/tags/hardware/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>STM32F0xx DigitalIO AnalogIn PCB</title>
+      <link>https://waynedupreez1.github.io/AkadupTinker/posts/stm32f0_adio/</link>
+      <pubDate>Sun, 30 Aug 2020 09:45:00 +1200</pubDate>
+      
+      <guid>https://waynedupreez1.github.io/AkadupTinker/posts/stm32f0_adio/</guid>
+      <description>Description After killing my backplane idea I decided to try my hand at a distributed IO type system.
+STM32F0 ADIO PCB I decided to use a stm32F030 mcu on this for 2 reasons: 1. its cheap about 1USD 2. rust is fully supported.
+There is also a few selectable options set with solder bridges, I will talk about these options all through the post.
+Digital: I allowed for 8 selectable inputs or outputs.</description>
+    </item>
+    
+    <item>
+      <title>Killing the Industrial BackPlane</title>
+      <link>https://waynedupreez1.github.io/AkadupTinker/posts/killing_the_industrial_backplane/</link>
+      <pubDate>Sun, 30 Aug 2020 09:00:00 +1200</pubDate>
+      
+      <guid>https://waynedupreez1.github.io/AkadupTinker/posts/killing_the_industrial_backplane/</guid>
+      <description>Description Killing of the Industrial backplane and the reasons why.
+Reasons The main reason for killing this project is because of economics, let me explain.
+The idea with this system was to create a generic backplane, then create a cpu module for every controller board that we want to interface with the backplane. These cpu modules could technically be anything stm32 blue pill&amp;rsquo;s or raspberry pi&amp;rsquo;s or any cheap controller. The typical size of the cpu module would be about 50mm x 50mm which would cost 15USD for a 4 layer board.</description>
+    </item>
+    
+    <item>
       <title>Industrial BackPlane</title>
       <link>https://waynedupreez1.github.io/AkadupTinker/posts/industrial_backplane/</link>
-      <pubDate>Sun, 08 Mar 2020 11:38:00 +0000</pubDate>
+      <pubDate>Sun, 08 Mar 2020 11:38:00 +1200</pubDate>
       
       <guid>https://waynedupreez1.github.io/AkadupTinker/posts/industrial_backplane/</guid>
       <description>Description I have managed to get some PCB&amp;rsquo;s designed based on my requirements. Here is some 3D models of the first few boards I am getting made.

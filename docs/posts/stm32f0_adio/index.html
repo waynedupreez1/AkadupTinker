@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+
+<meta name="description" content="The site with Tinker projects">
+<title>
+    STM32F0xx DigitalIO AnalogIn PCB - Akadup Tinker Site
+</title>
+
+
+<link rel="shortcut icon" href="/AkadupTinker/images/favicon.ico">
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/AkadupTinker/css/main.min.353ca4aba7f8dd7881fd0d5dfb3060f96bcc2f6367a8e1a2cbaba5d330d4baeb.css" integrity="sha256-NTykq6f43XiB/Q1d&#43;zBg&#43;WvML2NnqOGiy6ul0zDUuus=" crossorigin="anonymous" media="screen">
+
+
+
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Didact+Gothic">
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://waynedupreez1.github.io/AkadupTinker/images/wolf-track-512-317041.png"/>
+
+<meta name="twitter:title" content="STM32F0xx DigitalIO AnalogIn PCB"/>
+<meta name="twitter:description" content="Description After killing my backplane idea I decided to try my hand at a distributed IO type system.
+STM32F0 ADIO PCB I decided to use a stm32F030 mcu on this for 2 reasons: 1. its cheap about 1USD 2. rust is fully supported.
+There is also a few selectable options set with solder bridges, I will talk about these options all through the post.
+Digital: I allowed for 8 selectable inputs or outputs."/>
+
+<meta property="og:title" content="STM32F0xx DigitalIO AnalogIn PCB" />
+<meta property="og:description" content="Description After killing my backplane idea I decided to try my hand at a distributed IO type system.
+STM32F0 ADIO PCB I decided to use a stm32F030 mcu on this for 2 reasons: 1. its cheap about 1USD 2. rust is fully supported.
+There is also a few selectable options set with solder bridges, I will talk about these options all through the post.
+Digital: I allowed for 8 selectable inputs or outputs." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://waynedupreez1.github.io/AkadupTinker/posts/stm32f0_adio/" />
+<meta property="og:image" content="https://waynedupreez1.github.io/AkadupTinker/images/wolf-track-512-317041.png"/>
+<meta property="article:published_time" content="2020-08-30T09:45:00+12:00" />
+<meta property="article:modified_time" content="2020-08-30T09:45:00+12:00" /><meta property="og:site_name" content="AkadupTinker" />
+
+
+    
+
+    
+    
+    
+    <title>
+        
+        STM32F0xx DigitalIO AnalogIn PCB
+        
+    </title>
+</head>
+
+<body>
+    
+    
+    <header class="wrap flex-container">
+        <h1>STM32F0xx DigitalIO AnalogIn PCB</h1>
+    </header>
+    
+    <main class="wrap">
+        
+<div class="flex-container">
+    <aside role="complementary">
+        Sun Aug 30, 2020 &#183; 179 words
+        <div class="tag-container">
+            
+            
+            <span class="tag">
+                <a href="/AkadupTinker/tags/hardware/">
+                    hardware
+                </a>
+            </span>
+            
+            
+            
+            <span class="tag">
+                <a href="/AkadupTinker/tags/stm32f0_adio/">
+                    stm32f0_adio
+                </a>
+            </span>
+            
+            
+        </div>
+    </aside>
+    <hr />
+    <article role="article">
+        <h1 id="description">Description</h1>
+<p>After killing my backplane idea I decided to try my hand at a distributed IO type system.</p>
+<h1 id="stm32f0-adio-pcb">STM32F0 ADIO PCB</h1>
+<p>I decided to use a stm32F030 mcu on this for 2 reasons: 1. its cheap about 1USD 2. rust is fully supported.</p>
+<p>There is also a few selectable options set with solder bridges, I will talk about these options all through the post.</p>
+<h1 id="digital">Digital:</h1>
+<p>I allowed for 8 selectable inputs or outputs.</p>
+<h3 id="inputs">Inputs</h3>
+<p><img src="/AkadupTinker/gallery/input.png" alt="Input Circuit"></p>
+<p>The inputs can all accept 5 - 30V.</p>
+<h3 id="outputs">Outputs</h3>
+<p><img src="/AkadupTinker/gallery/output_lm339.png" alt="Output Circuit"></p>
+<p>Four of the outputs have an LM339 as ouputs with selectable voltage range.</p>
+<p><img src="/AkadupTinker/gallery/output_lm339_transistor.png" alt="Output Circuit Transistor"></p>
+<p>Four of the outputs have an LM339 driving a 200mA push pull output transister also voltage selectable</p>
+<h1 id="analog">Analog:</h1>
+<p>I allowed for 4 inputs all with +-10V input and 4-20mA selectable.</p>
+<p>Two of these inputs also have controllable gain amplifiers.</p>
+<p><img src="/AkadupTinker/gallery/analog_in_with_amp.png" alt="Input with Amplifier"></p>
+<h1 id="communication">Communication</h1>
+<h3 id="wired">Wired</h3>
+<p>Dedicated RS485</p>
+<h3 id="wireless">Wireless</h3>
+<p>Interface for the following cheap(around 1USD) wireless board that can be bought from aliexpress etc.</p>
+<ol>
+<li>ESP32-01 -&gt; Wifi</li>
+<li>NRF24L01 -&gt; 2.4G transeiver</li>
+<li>RA-01 -&gt; 433Mhz transeiver</li>
+</ol>
+<h1 id="pcb-dimensions">PCB Dimensions</h1>
+<p>This board is 50x60mm</p>
+<p><img src="/AkadupTinker/gallery/stm32_adio.png" alt="STM32F0 ADIO"></p>
+<h3 id="__and-thats-it-until-the-next-one__"><strong>And Thats it until the next one.</strong></h3>
+
+    </article>
+</div>
+
+
+        
+<nav role="navigation" class="flex-container bottom-menu">
+    
+<hr />
+<p>
+
+
+    
+        <a href="/AkadupTinker/posts">back</a>
+        
+            &#183;
+        
+    
+
+    
+        
+            <a href="/AkadupTinker/posts">Posts</a>
+        
+    
+    
+        
+            &#183; 
+            <a href="/AkadupTinker/gallery">Gallery</a>
+        
+            &#183; 
+            <a href="/AkadupTinker/about">Wayne who?</a>
+        
+    
+    &#183; 
+    <a href="/AkadupTinker/">
+        main
+    </a>
+
+</p>
+</nav>
+
+    </main>
+    
+    <footer class="flex-container footer"></footer>
+    
+    
+</body>
+
+</html>

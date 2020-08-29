@@ -6,7 +6,7 @@
     <description>Recent content in software on Akadup Tinker Site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 08 Mar 2020 11:38:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 08 Mar 2020 11:38:00 +1200</lastBuildDate>
     
 	<atom:link href="https://waynedupreez1.github.io/AkadupTinker/tags/software/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,7 +14,7 @@
     <item>
       <title>Eeprom 34c04</title>
       <link>https://waynedupreez1.github.io/AkadupTinker/posts/eeprom_34c04/</link>
-      <pubDate>Sun, 08 Mar 2020 11:38:00 +0000</pubDate>
+      <pubDate>Sun, 08 Mar 2020 11:38:00 +1200</pubDate>
       
       <guid>https://waynedupreez1.github.io/AkadupTinker/posts/eeprom_34c04/</guid>
       <description>Description So after geting some PCB&amp;rsquo;s made I decided to try my hand at writing drivers for the 34C04 EEPROM I2C chips that I use to identify each PCB plugged into the backplane board.

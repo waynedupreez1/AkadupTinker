@@ -1,27 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on Akadup Tinker Site</title>
-    <link>https://waynedupreez1.github.io/AkadupTinker/posts/</link>
-    <description>Recent content in Posts on Akadup Tinker Site</description>
+    <title>industrial_backplane on Akadup Tinker Site</title>
+    <link>https://waynedupreez1.github.io/AkadupTinker/tags/industrial_backplane/</link>
+    <description>Recent content in industrial_backplane on Akadup Tinker Site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 13 Feb 2018 12:21:57 -0500</lastBuildDate>
+    <lastBuildDate>Sun, 30 Aug 2020 09:00:00 +1200</lastBuildDate>
     
-	<atom:link href="https://waynedupreez1.github.io/AkadupTinker/posts/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://waynedupreez1.github.io/AkadupTinker/tags/industrial_backplane/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>STM32F0xx DigitalIO AnalogIn PCB</title>
-      <link>https://waynedupreez1.github.io/AkadupTinker/posts/stm32f0_adio/</link>
-      <pubDate>Sun, 30 Aug 2020 09:45:00 +1200</pubDate>
-      
-      <guid>https://waynedupreez1.github.io/AkadupTinker/posts/stm32f0_adio/</guid>
-      <description>Description After killing my backplane idea I decided to try my hand at a distributed IO type system.
-STM32F0 ADIO PCB I decided to use a stm32F030 mcu on this for 2 reasons: 1. its cheap about 1USD 2. rust is fully supported.
-There is also a few selectable options set with solder bridges, I will talk about these options all through the post.
-Digital: I allowed for 8 selectable inputs or outputs.</description>
-    </item>
     
     <item>
       <title>Killing the Industrial BackPlane</title>
@@ -32,16 +20,6 @@ Digital: I allowed for 8 selectable inputs or outputs.</description>
       <description>Description Killing of the Industrial backplane and the reasons why.
 Reasons The main reason for killing this project is because of economics, let me explain.
 The idea with this system was to create a generic backplane, then create a cpu module for every controller board that we want to interface with the backplane. These cpu modules could technically be anything stm32 blue pill&amp;rsquo;s or raspberry pi&amp;rsquo;s or any cheap controller. The typical size of the cpu module would be about 50mm x 50mm which would cost 15USD for a 4 layer board.</description>
-    </item>
-    
-    <item>
-      <title>Eeprom 34c04</title>
-      <link>https://waynedupreez1.github.io/AkadupTinker/posts/eeprom_34c04/</link>
-      <pubDate>Sun, 08 Mar 2020 11:38:00 +1200</pubDate>
-      
-      <guid>https://waynedupreez1.github.io/AkadupTinker/posts/eeprom_34c04/</guid>
-      <description>Description So after geting some PCB&amp;rsquo;s made I decided to try my hand at writing drivers for the 34C04 EEPROM I2C chips that I use to identify each PCB plugged into the backplane board.
-I decided to write this in rust as my C language foo is not so great, also rust is cool and I want to try it out for embedded work as I already use it for pc code development.</description>
     </item>
     
     <item>

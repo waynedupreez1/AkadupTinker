@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>stm32f0_adio on Akadup Tinker Site</title>
+    <link>https://waynedupreez1.github.io/AkadupTinker/tags/stm32f0_adio/</link>
+    <description>Recent content in stm32f0_adio on Akadup Tinker Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 30 Aug 2020 09:45:00 +1200</lastBuildDate>
+    
+	<atom:link href="https://waynedupreez1.github.io/AkadupTinker/tags/stm32f0_adio/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>STM32F0xx DigitalIO AnalogIn PCB</title>
+      <link>https://waynedupreez1.github.io/AkadupTinker/posts/stm32f0_adio/</link>
+      <pubDate>Sun, 30 Aug 2020 09:45:00 +1200</pubDate>
+      
+      <guid>https://waynedupreez1.github.io/AkadupTinker/posts/stm32f0_adio/</guid>
+      <description>Description After killing my backplane idea I decided to try my hand at a distributed IO type system.
+STM32F0 ADIO PCB I decided to use a stm32F030 mcu on this for 2 reasons: 1. its cheap about 1USD 2. rust is fully supported.
+There is also a few selectable options set with solder bridges, I will talk about these options all through the post.
+Digital: I allowed for 8 selectable inputs or outputs.</description>
+    </item>
+    
+  </channel>
+</rss>

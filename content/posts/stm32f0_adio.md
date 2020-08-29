@@ -29,13 +29,13 @@ The inputs can all accept 5 - 30V.
 
 ### Outputs
 
-![Output Circuit](/AkadupTinker/gallery/output_lm339.png)
+![Output Circuit](/AkadupTinker/gallery/output_lm393.png)
 
-Four of the outputs have an LM339 as ouputs with selectable voltage range.
+Four of the outputs have an LM393 as ouputs with selectable voltage range.
 
-![Output Circuit Transistor](/AkadupTinker/gallery/output_lm339_transistor.png)
+![Output Circuit Transistor](/AkadupTinker/gallery/output_lm393_transistor.png)
 
-Four of the outputs have an LM339 driving a 200mA push pull output transister also voltage selectable
+Four of the outputs have an LM393 driving a 200mA push pull output transister also voltage selectable
 
 # Analog:
 

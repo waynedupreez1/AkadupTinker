@@ -1,4 +1,5 @@
-baseurl                  = "https://example.com"           # Your domain name
+baseurl                  = "https://waynedupreez1.github.io/AkadupTinker/"           # Your domain name
+publishDir               = "docs"
 languageCode             = "en-us"
 defaultContentLanguage   = "en"
 isMultilingual           = false

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>hardware on Akadup Tinker Site</title>
+    <link>https://waynedupreez1.github.io/AkadupTinker/tags/hardware/</link>
+    <description>Recent content in hardware on Akadup Tinker Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 08 Mar 2020 11:38:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://waynedupreez1.github.io/AkadupTinker/tags/hardware/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Industrial BackPlane</title>
+      <link>https://waynedupreez1.github.io/AkadupTinker/posts/industrial_backplane/</link>
+      <pubDate>Sun, 08 Mar 2020 11:38:00 +0000</pubDate>
+      
+      <guid>https://waynedupreez1.github.io/AkadupTinker/posts/industrial_backplane/</guid>
+      <description>Description I have managed to get some PCB&amp;rsquo;s designed based on my requirements. Here is some 3D models of the first few boards I am getting made.
+Backplane PCB This board is essentially the main component all other boards will plug into.
+Some features I tried to nail on this one:  Allowed for up to 4 boards to be plugged in. Each slot is addressable. Provide connectors for 24V, 3V3 and 5V to be connected directly into the backplane (This could be replaced by a plug in board).</description>
+    </item>
+    
+  </channel>
+</rss>

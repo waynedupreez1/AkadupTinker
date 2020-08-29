@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Akadup Tinker Site</title>
+    <link>https://waynedupreez1.github.io/AkadupTinker/posts/</link>
+    <description>Recent content in Posts on Akadup Tinker Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 13 Feb 2018 12:21:57 -0500</lastBuildDate>
+    
+	<atom:link href="https://waynedupreez1.github.io/AkadupTinker/posts/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Eeprom 34c04</title>
+      <link>https://waynedupreez1.github.io/AkadupTinker/posts/eeprom_34c04/</link>
+      <pubDate>Sun, 08 Mar 2020 11:38:00 +0000</pubDate>
+      
+      <guid>https://waynedupreez1.github.io/AkadupTinker/posts/eeprom_34c04/</guid>
+      <description>Description So after geting some PCB&amp;rsquo;s made I decided to try my hand at writing drivers for the 34C04 EEPROM I2C chips that I use to identify each PCB plugged into the backplane board.
+I decided to write this in rust as my C language foo is not so great, also rust is cool and I want to try it out for embedded work as I already use it for pc code development.</description>
+    </item>
+    
+    <item>
+      <title>Industrial BackPlane</title>
+      <link>https://waynedupreez1.github.io/AkadupTinker/posts/industrial_backplane/</link>
+      <pubDate>Sun, 08 Mar 2020 11:38:00 +0000</pubDate>
+      
+      <guid>https://waynedupreez1.github.io/AkadupTinker/posts/industrial_backplane/</guid>
+      <description>Description I have managed to get some PCB&amp;rsquo;s designed based on my requirements. Here is some 3D models of the first few boards I am getting made.
+Backplane PCB This board is essentially the main component all other boards will plug into.
+Some features I tried to nail on this one:  Allowed for up to 4 boards to be plugged in. Each slot is addressable. Provide connectors for 24V, 3V3 and 5V to be connected directly into the backplane (This could be replaced by a plug in board).</description>
+    </item>
+    
+  </channel>
+</rss>

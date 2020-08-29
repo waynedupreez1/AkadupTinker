@@ -12,13 +12,13 @@ pygmentsCodefences       = true
 [params]
     dateform             = "Mon Jan 02, 2006"
     dateformfull         = "Mon Jan 2 2006 15:04:05 EST"
-    favicon              = ""
+    favicon              = "/images/favicon.ico"
     homepage             = "main"                           # What to call the home page link
     footerText           = ""
 
 # Metadata for Open Graph and Twitter
-    description          = "The site with Tinker projects"               # Max 160 characters show in search results
-    images               = [""]                       # Image that shows on Twitter cards and Open Graph links to the site
+    description          = "The site with Tinker projects"          # Max 160 characters show in search results
+    images               = ["/images/wolf-track-512-317041.png"]    # Image that shows on Twitter cards and Open Graph links to the site
     title                = "AkadupTinker"
     # rss                = ""
 

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+
+<meta name="description" content="The site with Tinker projects">
+<title>
+    Eeprom 34c04 - Akadup Tinker Site
+</title>
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/AkadupTinker/css/main.min.353ca4aba7f8dd7881fd0d5dfb3060f96bcc2f6367a8e1a2cbaba5d330d4baeb.css" integrity="sha256-NTykq6f43XiB/Q1d&#43;zBg&#43;WvML2NnqOGiy6ul0zDUuus=" crossorigin="anonymous" media="screen">
+
+
+
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Didact+Gothic">
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://waynedupreez1.github.io/AkadupTinker/"/>
+
+<meta name="twitter:title" content="Eeprom 34c04"/>
+<meta name="twitter:description" content="Description So after geting some PCB&rsquo;s made I decided to try my hand at writing drivers for the 34C04 EEPROM I2C chips that I use to identify each PCB plugged into the backplane board.
+I decided to write this in rust as my C language foo is not so great, also rust is cool and I want to try it out for embedded work as I already use it for pc code development."/>
+
+<meta property="og:title" content="Eeprom 34c04" />
+<meta property="og:description" content="Description So after geting some PCB&rsquo;s made I decided to try my hand at writing drivers for the 34C04 EEPROM I2C chips that I use to identify each PCB plugged into the backplane board.
+I decided to write this in rust as my C language foo is not so great, also rust is cool and I want to try it out for embedded work as I already use it for pc code development." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://waynedupreez1.github.io/AkadupTinker/posts/eeprom_34c04/" />
+<meta property="og:image" content="https://waynedupreez1.github.io/AkadupTinker/"/>
+<meta property="article:published_time" content="2020-03-08T11:38:00+00:00" />
+<meta property="article:modified_time" content="2020-03-08T11:38:00+00:00" /><meta property="og:site_name" content="AkadupTinker" />
+
+
+    
+
+    
+    
+    
+    <title>
+        
+        Eeprom 34c04
+        
+    </title>
+</head>
+
+<body>
+    
+    
+    <header class="wrap flex-container">
+        <h1>Eeprom 34c04</h1>
+    </header>
+    
+    <main class="wrap">
+        
+<div class="flex-container">
+    <aside role="complementary">
+        Sun Mar 08, 2020 &#183; 207 words
+        <div class="tag-container">
+            
+            
+            <span class="tag">
+                <a href="/AkadupTinker/tags/software/">
+                    software
+                </a>
+            </span>
+            
+            
+        </div>
+    </aside>
+    <hr />
+    <article role="article">
+        <h1 id="description">Description</h1>
+<p>So after geting some PCB&rsquo;s made I decided to try my hand at writing drivers for the 34C04 EEPROM
+I2C chips that I use to identify each PCB plugged into the backplane board.</p>
+<p>I decided to write this in rust as my C language foo is not so great, also rust is cool
+and I want to try it out for embedded work as I already use it for pc code development.</p>
+<p>My setup is as follows:</p>
+<ol>
+<li>IDE = VScode.</li>
+<li>OS = Ubuntu - I run ubuntu at home and virtualize Windows where needed.</li>
+<li>Target = STM32 - Blue Pill</li>
+</ol>
+<h1 id="issues">Issues</h1>
+<p>The first issue was getting it setup nicely with GDB for debugging, fortunatly the web is full of people doing it.
+The second issues was to set it up in such a way that my unit test code is compiled and ran on my workstation and the
+the application code is compiled and ran on the target, I managed to figure it out.</p>
+<h1 id="some-example-code">Some example code:</h1>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-rust" data-lang="rust"><span style="color:#66d9ef">let</span> address <span style="color:#f92672">=</span> eeprom34c04::SlaveAddr::A2A1A0(<span style="color:#66d9ef">false</span>, <span style="color:#66d9ef">true</span>, <span style="color:#66d9ef">true</span>);
+
+<span style="color:#66d9ef">let</span> <span style="color:#66d9ef">mut</span> eeprom <span style="color:#f92672">=</span> eeprom34c04::Eeprom34c04::new_34c04(i2c_setup, address);
+
+<span style="color:#66d9ef">let</span> memory_address <span style="color:#f92672">=</span> <span style="color:#ae81ff">0x0F</span>;
+
+<span style="color:#66d9ef">let</span> data <span style="color:#f92672">=</span> <span style="color:#ae81ff">0xF0</span>;
+
+eeprom.write_byte(memory_address, data).unwrap();
+
+delay.delay_ms(<span style="color:#ae81ff">5</span><span style="color:#66d9ef">u16</span>);
+
+<span style="color:#66d9ef">let</span> read_data <span style="color:#f92672">=</span> eeprom.read_byte(memory_address).unwrap();
+</code></pre></div><h2 id="link-to-github-34c04-repohttpsgithubcomwaynedupreez1eeprom34c04-rs"><a href="https://github.com/waynedupreez1/eeprom34c04-rs">Link to Github 34C04 repo</a></h2>
+<h3 id="__and-thats-it-until-the-next-one__"><strong>And Thats it until the next one.</strong></h3>
+
+    </article>
+</div>
+
+
+        
+<nav role="navigation" class="flex-container bottom-menu">
+    
+<hr />
+<p>
+
+
+    
+        <a href="/AkadupTinker/posts">back</a>
+        
+            &#183;
+        
+    
+
+    
+        
+            <a href="/AkadupTinker/posts">Posts</a>
+        
+    
+    
+        
+            &#183; 
+            <a href="/AkadupTinker/gallery">Gallery</a>
+        
+            &#183; 
+            <a href="/AkadupTinker/about">Wayne who?</a>
+        
+    
+    &#183; 
+    <a href="/AkadupTinker/">
+        main
+    </a>
+
+</p>
+</nav>
+
+    </main>
+    
+    <footer class="flex-container footer"></footer>
+    
+    
+</body>
+
+</html>

@@ -1,9 +1,9 @@
 ---
 title: "Industrial BackPlane"
-date: 2020-03-08T11:38:00
+date: 2020-03-08T11:38:00+12:00
 showDate: true
 draft: false
-tags: ["hardware"]
+tags: ["hardware","industrial_backplane"]
 ---
 
 # Description

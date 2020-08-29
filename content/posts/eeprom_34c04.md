@@ -1,6 +1,6 @@
 ---
 title: "Eeprom 34c04"
-date: 2020-03-08T11:38:00
+date: 2020-03-08T11:38:00+12:00
 showDate: true
 draft: false
 tags: ["software"]
@@ -25,7 +25,6 @@ My setup is as follows:
 The first issue was getting it setup nicely with GDB for debugging, fortunatly the web is full of people doing it.
 The second issues was to set it up in such a way that my unit test code is compiled and ran on my workstation and the
 the application code is compiled and ran on the target, I managed to figure it out.
-
 
 # Some example code:
 

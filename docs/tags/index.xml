@@ -6,10 +6,28 @@
     <description>Recent content in Tags on Akadup Tinker Site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 30 Aug 2020 09:45:00 +1200</lastBuildDate>
+    <lastBuildDate>Sun, 13 Sep 2020 08:42:00 +1200</lastBuildDate>
     
 	<atom:link href="https://waynedupreez1.github.io/AkadupTinker/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>software</title>
+      <link>https://waynedupreez1.github.io/AkadupTinker/tags/software/</link>
+      <pubDate>Sun, 13 Sep 2020 08:42:00 +1200</pubDate>
+      
+      <guid>https://waynedupreez1.github.io/AkadupTinker/tags/software/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>stm32f0_adio</title>
+      <link>https://waynedupreez1.github.io/AkadupTinker/tags/stm32f0_adio/</link>
+      <pubDate>Sun, 13 Sep 2020 08:42:00 +1200</pubDate>
+      
+      <guid>https://waynedupreez1.github.io/AkadupTinker/tags/stm32f0_adio/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>hardware</title>
@@ -21,29 +39,11 @@
     </item>
     
     <item>
-      <title>stm32f0_adio</title>
-      <link>https://waynedupreez1.github.io/AkadupTinker/tags/stm32f0_adio/</link>
-      <pubDate>Sun, 30 Aug 2020 09:45:00 +1200</pubDate>
-      
-      <guid>https://waynedupreez1.github.io/AkadupTinker/tags/stm32f0_adio/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>industrial_backplane</title>
       <link>https://waynedupreez1.github.io/AkadupTinker/tags/industrial_backplane/</link>
       <pubDate>Sun, 30 Aug 2020 09:00:00 +1200</pubDate>
       
       <guid>https://waynedupreez1.github.io/AkadupTinker/tags/industrial_backplane/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>software</title>
-      <link>https://waynedupreez1.github.io/AkadupTinker/tags/software/</link>
-      <pubDate>Sun, 08 Mar 2020 11:38:00 +1200</pubDate>
-      
-      <guid>https://waynedupreez1.github.io/AkadupTinker/tags/software/</guid>
       <description></description>
     </item>
     

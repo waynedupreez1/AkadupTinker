@@ -6,10 +6,20 @@
     <description>Recent content in stm32f0_adio on Akadup Tinker Site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 30 Aug 2020 09:45:00 +1200</lastBuildDate>
+    <lastBuildDate>Sun, 13 Sep 2020 08:42:00 +1200</lastBuildDate>
     
 	<atom:link href="https://waynedupreez1.github.io/AkadupTinker/tags/stm32f0_adio/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>STM32F0xx DigitalIO AnalogIn Rust</title>
+      <link>https://waynedupreez1.github.io/AkadupTinker/posts/stm32f0_adio_rust/</link>
+      <pubDate>Sun, 13 Sep 2020 08:42:00 +1200</pubDate>
+      
+      <guid>https://waynedupreez1.github.io/AkadupTinker/posts/stm32f0_adio_rust/</guid>
+      <description>Description As mentioned in STM32F0xx DigitalIO AnalogIn PCB one of the main reasons for me to take on this project is to learn some more rust lang. If rust is useful in an embedded setting I definitely will not subject myself to C again anytime soon, just kidding I like you C&amp;hellip;.nah not really.
+Setup Hardware  Target =&amp;gt; STM32F030  This seemed like a pretty reasonable Cortex M0 chip the variation I use sports around 35 useful pins, 64K ROM and 8K RAM.</description>
+    </item>
     
     <item>
       <title>STM32F0xx DigitalIO AnalogIn PCB</title>

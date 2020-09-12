@@ -3,22 +3,32 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://waynedupreez1.github.io/AkadupTinker/tags/software/</loc>
+    <lastmod>2020-09-13T08:42:00+12:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://waynedupreez1.github.io/AkadupTinker/tags/stm32f0_adio/</loc>
+    <lastmod>2020-09-13T08:42:00+12:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://waynedupreez1.github.io/AkadupTinker/posts/stm32f0_adio_rust/</loc>
+    <lastmod>2020-09-13T08:42:00+12:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://waynedupreez1.github.io/AkadupTinker/tags/</loc>
+    <lastmod>2020-09-13T08:42:00+12:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://waynedupreez1.github.io/AkadupTinker/tags/hardware/</loc>
     <lastmod>2020-08-30T09:45:00+12:00</lastmod>
   </url>
   
   <url>
-    <loc>https://waynedupreez1.github.io/AkadupTinker/tags/stm32f0_adio/</loc>
-    <lastmod>2020-08-30T09:45:00+12:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://waynedupreez1.github.io/AkadupTinker/posts/stm32f0_adio/</loc>
-    <lastmod>2020-08-30T09:45:00+12:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://waynedupreez1.github.io/AkadupTinker/tags/</loc>
     <lastmod>2020-08-30T09:45:00+12:00</lastmod>
   </url>
   
@@ -39,11 +49,6 @@
   
   <url>
     <loc>https://waynedupreez1.github.io/AkadupTinker/posts/industrial_backplane/</loc>
-    <lastmod>2020-03-08T11:38:00+12:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://waynedupreez1.github.io/AkadupTinker/tags/software/</loc>
     <lastmod>2020-03-08T11:38:00+12:00</lastmod>
   </url>
   

@@ -6,10 +6,37 @@
     <description>Recent content in Tags on Akadup Tinker Site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 13 Sep 2020 08:42:00 +1200</lastBuildDate>
+    <lastBuildDate>Sun, 11 Oct 2020 08:00:00 +1300</lastBuildDate>
     
 	<atom:link href="https://waynedupreez1.github.io/AkadupTinker/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>cad</title>
+      <link>https://waynedupreez1.github.io/AkadupTinker/tags/cad/</link>
+      <pubDate>Sun, 11 Oct 2020 08:00:00 +1300</pubDate>
+      
+      <guid>https://waynedupreez1.github.io/AkadupTinker/tags/cad/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>hardware</title>
+      <link>https://waynedupreez1.github.io/AkadupTinker/tags/hardware/</link>
+      <pubDate>Sun, 11 Oct 2020 08:00:00 +1300</pubDate>
+      
+      <guid>https://waynedupreez1.github.io/AkadupTinker/tags/hardware/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>nas</title>
+      <link>https://waynedupreez1.github.io/AkadupTinker/tags/nas/</link>
+      <pubDate>Sun, 11 Oct 2020 08:00:00 +1300</pubDate>
+      
+      <guid>https://waynedupreez1.github.io/AkadupTinker/tags/nas/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>software</title>
@@ -26,15 +53,6 @@
       <pubDate>Sun, 13 Sep 2020 08:42:00 +1200</pubDate>
       
       <guid>https://waynedupreez1.github.io/AkadupTinker/tags/stm32f0_adio/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>hardware</title>
-      <link>https://waynedupreez1.github.io/AkadupTinker/tags/hardware/</link>
-      <pubDate>Sun, 30 Aug 2020 09:45:00 +1200</pubDate>
-      
-      <guid>https://waynedupreez1.github.io/AkadupTinker/tags/hardware/</guid>
       <description></description>
     </item>
     

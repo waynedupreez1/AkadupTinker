@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>nas on Akadup Tinker Site</title>
+    <link>https://waynedupreez1.github.io/AkadupTinker/tags/nas/</link>
+    <description>Recent content in nas on Akadup Tinker Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 11 Oct 2020 08:00:00 +1300</lastBuildDate>
+    
+	<atom:link href="https://waynedupreez1.github.io/AkadupTinker/tags/nas/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Freecad NAS enclosure</title>
+      <link>https://waynedupreez1.github.io/AkadupTinker/posts/2020_10_11_cad_for_nas/</link>
+      <pubDate>Sun, 11 Oct 2020 08:00:00 +1300</pubDate>
+      
+      <guid>https://waynedupreez1.github.io/AkadupTinker/posts/2020_10_11_cad_for_nas/</guid>
+      <description>Description I love to tinker with things, generally my computers and sometimes when you tinker you tend to screw up and loose data, sometimes very important data like your wedding photos and everything else.
+Yes you read correctly I lost my wedding photos, all of it. This happened whilst moving from linux to windows and not backing up properly, yeah I know pretty stupid.
+Fortunately with some more tinkering and running some recovery software for a few days I managed to recover all my photos.</description>
+    </item>
+    
+  </channel>
+</rss>

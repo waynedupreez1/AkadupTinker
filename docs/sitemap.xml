@@ -3,6 +3,31 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://waynedupreez1.github.io/AkadupTinker/tags/cad/</loc>
+    <lastmod>2020-10-11T08:00:00+13:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://waynedupreez1.github.io/AkadupTinker/posts/2020_10_11_cad_for_nas/</loc>
+    <lastmod>2020-10-11T08:00:00+13:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://waynedupreez1.github.io/AkadupTinker/tags/hardware/</loc>
+    <lastmod>2020-10-11T08:00:00+13:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://waynedupreez1.github.io/AkadupTinker/tags/nas/</loc>
+    <lastmod>2020-10-11T08:00:00+13:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://waynedupreez1.github.io/AkadupTinker/tags/</loc>
+    <lastmod>2020-10-11T08:00:00+13:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://waynedupreez1.github.io/AkadupTinker/tags/software/</loc>
     <lastmod>2020-09-13T08:42:00+12:00</lastmod>
   </url>
@@ -13,22 +38,12 @@
   </url>
   
   <url>
-    <loc>https://waynedupreez1.github.io/AkadupTinker/posts/stm32f0_adio_rust/</loc>
+    <loc>https://waynedupreez1.github.io/AkadupTinker/posts/2020_09_13_stm32f0_adio_rust/</loc>
     <lastmod>2020-09-13T08:42:00+12:00</lastmod>
   </url>
   
   <url>
-    <loc>https://waynedupreez1.github.io/AkadupTinker/tags/</loc>
-    <lastmod>2020-09-13T08:42:00+12:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://waynedupreez1.github.io/AkadupTinker/tags/hardware/</loc>
-    <lastmod>2020-08-30T09:45:00+12:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://waynedupreez1.github.io/AkadupTinker/posts/stm32f0_adio/</loc>
+    <loc>https://waynedupreez1.github.io/AkadupTinker/posts/2020_03_30_stm32f0_adio/</loc>
     <lastmod>2020-08-30T09:45:00+12:00</lastmod>
   </url>
   
@@ -38,17 +53,17 @@
   </url>
   
   <url>
-    <loc>https://waynedupreez1.github.io/AkadupTinker/posts/killing_the_industrial_backplane/</loc>
+    <loc>https://waynedupreez1.github.io/AkadupTinker/posts/2020_08_30_killing_the_industrial_backplane/</loc>
     <lastmod>2020-08-30T09:00:00+12:00</lastmod>
   </url>
   
   <url>
-    <loc>https://waynedupreez1.github.io/AkadupTinker/posts/eeprom_34c04/</loc>
+    <loc>https://waynedupreez1.github.io/AkadupTinker/posts/2020_03_08_eeprom_34c04/</loc>
     <lastmod>2020-03-08T11:38:00+12:00</lastmod>
   </url>
   
   <url>
-    <loc>https://waynedupreez1.github.io/AkadupTinker/posts/industrial_backplane/</loc>
+    <loc>https://waynedupreez1.github.io/AkadupTinker/posts/2020_03_08_industrial_backplane/</loc>
     <lastmod>2020-03-08T11:38:00+12:00</lastmod>
   </url>
   

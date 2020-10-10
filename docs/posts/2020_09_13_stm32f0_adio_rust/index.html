@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+
+<meta name="description" content="The site with Tinker projects">
+<title>
+    STM32F0xx DigitalIO AnalogIn Rust - Akadup Tinker Site
+</title>
+
+
+<link rel="shortcut icon" href="/AkadupTinker/images/favicon.ico">
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/AkadupTinker/css/main.min.353ca4aba7f8dd7881fd0d5dfb3060f96bcc2f6367a8e1a2cbaba5d330d4baeb.css" integrity="sha256-NTykq6f43XiB/Q1d&#43;zBg&#43;WvML2NnqOGiy6ul0zDUuus=" crossorigin="anonymous" media="screen">
+
+
+
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Didact+Gothic">
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://waynedupreez1.github.io/AkadupTinker/images/wolf-track-512-317041.png"/>
+
+<meta name="twitter:title" content="STM32F0xx DigitalIO AnalogIn Rust"/>
+<meta name="twitter:description" content="Description As mentioned in STM32F0xx DigitalIO AnalogIn PCB one of the main reasons for me to take on this project is to learn some more rust lang. If rust is useful in an embedded setting I definitely will not subject myself to C again anytime soon, just kidding I like you C&hellip;.nah not really.
+Setup Hardware  Target =&gt; STM32F030  This seemed like a pretty reasonable Cortex M0 chip the variation I use sports around 35 useful pins, 64K ROM and 8K RAM."/>
+
+<meta property="og:title" content="STM32F0xx DigitalIO AnalogIn Rust" />
+<meta property="og:description" content="Description As mentioned in STM32F0xx DigitalIO AnalogIn PCB one of the main reasons for me to take on this project is to learn some more rust lang. If rust is useful in an embedded setting I definitely will not subject myself to C again anytime soon, just kidding I like you C&hellip;.nah not really.
+Setup Hardware  Target =&gt; STM32F030  This seemed like a pretty reasonable Cortex M0 chip the variation I use sports around 35 useful pins, 64K ROM and 8K RAM." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://waynedupreez1.github.io/AkadupTinker/posts/2020_09_13_stm32f0_adio_rust/" />
+<meta property="og:image" content="https://waynedupreez1.github.io/AkadupTinker/images/wolf-track-512-317041.png"/>
+<meta property="article:published_time" content="2020-09-13T08:42:00+12:00" />
+<meta property="article:modified_time" content="2020-09-13T08:42:00+12:00" /><meta property="og:site_name" content="AkadupTinker" />
+
+
+    
+
+    
+    
+    
+    <title>
+        
+        STM32F0xx DigitalIO AnalogIn Rust
+        
+    </title>
+</head>
+
+<body>
+    
+    
+    <header class="wrap flex-container">
+        <h1>STM32F0xx DigitalIO AnalogIn Rust</h1>
+    </header>
+    
+    <main class="wrap">
+        
+<div class="flex-container">
+    <aside role="complementary">
+        Sun Sep 13, 2020 &#183; 1171 words
+        <div class="tag-container">
+            
+            
+            <span class="tag">
+                <a href="/AkadupTinker/tags/software/">
+                    software
+                </a>
+            </span>
+            
+            
+            
+            <span class="tag">
+                <a href="/AkadupTinker/tags/stm32f0_adio/">
+                    stm32f0_adio
+                </a>
+            </span>
+            
+            
+        </div>
+    </aside>
+    <hr />
+    <article role="article">
+        <h1 id="description">Description</h1>
+<p>As mentioned in <a href="/AkadupTinker/posts/stm32f0_adio">STM32F0xx DigitalIO AnalogIn PCB</a> one of the main reasons for me to take on this project is to learn some more rust lang. If rust is useful in an embedded setting I definitely will not subject myself to C again anytime soon, just kidding I like you C&hellip;.nah not really.</p>
+<h1 id="setup">Setup</h1>
+<h3 id="hardware">Hardware</h3>
+<ol>
+<li>Target =&gt; STM32F030</li>
+</ol>
+<p>This seemed like a pretty reasonable Cortex M0 chip the variation I use sports around 35 useful pins, 64K ROM and 8K RAM. The best reason for this is the cost of around 1USD for the low quantities I am buying.</p>
+<ol start="2">
+<li>Programmer =&gt; STlinkV2</li>
+</ol>
+<p>The cheap Aliexpress variation which can be had for around 3USD.</p>
+<h3 id="software">Software</h3>
+<ol>
+<li>IDE =&gt; VScode</li>
+</ol>
+<p>I have been using this for a while now and is my main driver for python, c# and rust development.</p>
+<ol start="2">
+<li>OS =&gt; Ubuntu KDE 20.04 (Kubuntu)</li>
+</ol>
+<p>Recently updated from Ubuntu KDE 18.04. Pretty stable though I have had some interesting things happens especially when docking and undocking.</p>
+<h3 id="getting-started-resources">Getting Started Resources</h3>
+<p>There are a few other bits that needs installation like rust, GDB, OpenOCD etc.</p>
+<p>The following resources are definitely worth checking out:</p>
+<ol>
+<li><a href="https://rust-embedded.github.io/book/intro/index.html">Rust Embedded Book</a></li>
+<li><a href="https://docs.rust-embedded.org/discovery/">Rust Embedded Discovery Book</a></li>
+<li><a href="https://github.com/rust-embedded/cortex-m-quickstart">Cortex-M quick start</a></li>
+</ol>
+<h1 id="debugging-and-testing">Debugging and Testing</h1>
+<p>After installing and setting up everything we can finally start writing code.</p>
+<p>Hang on! How will we test our code?</p>
+<h3 id="hardware-level-debugging">Hardware level debugging.</h3>
+<p>In the resources as linked above you will be guided to get a debug instance setup in vscode.
+This instance can be used to step through the code as the MCU executes it.
+I made some modifications to this, this is one of the debuggers in my launch.json file.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-TOML" data-lang="TOML"><span style="color:#960050;background-color:#1e0010">{</span>
+    <span style="color:#960050;background-color:#1e0010">/*</span> <span style="color:#a6e22e">Configuration</span> <span style="color:#a6e22e">for</span> <span style="color:#a6e22e">the</span> <span style="color:#a6e22e">STM32F030</span><span style="color:#960050;background-color:#1e0010">*/</span>
+    <span style="color:#e6db74">&#34;type&#34;</span><span style="color:#960050;background-color:#1e0010">:</span> <span style="color:#e6db74">&#34;cortex-debug&#34;</span>,
+    <span style="color:#e6db74">&#34;request&#34;</span><span style="color:#960050;background-color:#1e0010">:</span> <span style="color:#e6db74">&#34;launch&#34;</span>,
+    <span style="color:#e6db74">&#34;name&#34;</span><span style="color:#960050;background-color:#1e0010">:</span> <span style="color:#e6db74">&#34;Debug (OpenOCD)&#34;</span>,
+    <span style="color:#e6db74">&#34;servertype&#34;</span><span style="color:#960050;background-color:#1e0010">:</span> <span style="color:#e6db74">&#34;openocd&#34;</span>,
+    <span style="color:#e6db74">&#34;cwd&#34;</span><span style="color:#960050;background-color:#1e0010">:</span> <span style="color:#e6db74">&#34;${workspaceRoot}&#34;</span>,
+    <span style="color:#e6db74">&#34;preLaunchTask&#34;</span><span style="color:#960050;background-color:#1e0010">:</span> <span style="color:#e6db74">&#34;Build Debug (STM32)&#34;</span>,
+    <span style="color:#e6db74">&#34;postDebugTask&#34;</span><span style="color:#960050;background-color:#1e0010">:</span> <span style="color:#e6db74">&#34;&#34;</span>,
+    <span style="color:#e6db74">&#34;runToMain&#34;</span><span style="color:#960050;background-color:#1e0010">:</span> <span style="color:#66d9ef">true</span>,
+    <span style="color:#e6db74">&#34;executable&#34;</span><span style="color:#960050;background-color:#1e0010">:</span> <span style="color:#e6db74">&#34;./target/thumbv6m-none-eabi/debug/${workspaceFolderBasename}&#34;</span>,
+    <span style="color:#e6db74">&#34;device&#34;</span><span style="color:#960050;background-color:#1e0010">:</span> <span style="color:#e6db74">&#34;STM32F030C8T6&#34;</span>,
+    <span style="color:#e6db74">&#34;configFiles&#34;</span><span style="color:#960050;background-color:#1e0010">:</span> [
+        <span style="color:#e6db74">&#34;openocd.cfg&#34;</span>,
+    ],
+    <span style="color:#e6db74">&#34;svdFile&#34;</span><span style="color:#960050;background-color:#1e0010">:</span> <span style="color:#e6db74">&#34;${workspaceRoot}/.vscode/STM32F0x0.svd&#34;</span>,
+    <span style="color:#e6db74">&#34;showDevDebugOutput&#34;</span><span style="color:#960050;background-color:#1e0010">:</span> <span style="color:#66d9ef">false</span>,
+    <span style="color:#e6db74">&#34;internalConsoleOptions&#34;</span><span style="color:#960050;background-color:#1e0010">:</span> <span style="color:#e6db74">&#34;openOnSessionStart&#34;</span>,
+    <span style="color:#e6db74">&#34;debuggerArgs&#34;</span><span style="color:#960050;background-color:#1e0010">:</span> [
+        <span style="color:#e6db74">&#34;-x&#34;</span>,
+        <span style="color:#e6db74">&#34;loader.gdb&#34;</span>
+    ],
+<span style="color:#960050;background-color:#1e0010">}</span>,
+</code></pre></div><h3 id="unit-testing">Unit Testing.</h3>
+<p>Could we do unit testing by having the test code run on the host?
+Yes we can but we need some cfg_attr. As seen below when not running the unit tests compile with no_std, no_main also do not import particular modules.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-rust" data-lang="rust"><span style="color:#75715e">#![cfg_attr(test, allow(unused_imports))]</span>
+<span style="color:#75715e">#![cfg_attr(not(test), no_std)]</span>
+<span style="color:#75715e">#![cfg_attr(not(test), no_main)]</span>
+
+<span style="color:#75715e">// set the panic handler
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">extern</span> <span style="color:#66d9ef">crate</span> cortex_m_semihosting;
+<span style="color:#75715e">#[cfg(not(test))]</span>
+<span style="color:#66d9ef">extern</span> <span style="color:#66d9ef">crate</span> panic_semihosting;
+
+<span style="color:#75715e">#[cfg(not(test))]</span>
+<span style="color:#66d9ef">use</span> cortex_m_semihosting::hprintln;
+<span style="color:#66d9ef">use</span> panic_semihosting <span style="color:#66d9ef">as</span> _;
+</code></pre></div><h1 id="code-size-whilst-debug">Code Size whilst Debug</h1>
+<p>I only have around 1 - 1.5k LOC and I am running out of space on the 64k ROM chip.</p>
+<p>How can this be? I asked myself.
+If this is the size of a small codebase rust might not be all that useful in an embedded setting.</p>
+<h3 id="the-solution">The solution</h3>
+<p>Add optimization!!!</p>
+<p>It seems like LLVM and rust includes tons of debug data in the binary when unoptimized what solved this problem for me was to add the following into my cargo file.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-TOML" data-lang="TOML">[<span style="color:#a6e22e">profile</span>.<span style="color:#a6e22e">dev</span>]
+<span style="color:#a6e22e">opt</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#a6e22e">level</span> = <span style="color:#e6db74">&#34;z&#34;</span>
+<span style="color:#a6e22e">debug</span> = <span style="color:#66d9ef">true</span>
+<span style="color:#a6e22e">debug</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#a6e22e">assertions</span> = <span style="color:#66d9ef">true</span>
+<span style="color:#a6e22e">overflow</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#a6e22e">checks</span> = <span style="color:#66d9ef">true</span>
+<span style="color:#a6e22e">lto</span> = <span style="color:#66d9ef">false</span>
+<span style="color:#a6e22e">panic</span> = <span style="color:#e6db74">&#39;unwind&#39;</span>
+<span style="color:#a6e22e">incremental</span> = <span style="color:#66d9ef">true</span>
+<span style="color:#a6e22e">codegen</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#a6e22e">units</span> = <span style="color:#ae81ff">256</span>
+<span style="color:#a6e22e">rpath</span> = <span style="color:#66d9ef">false</span>
+</code></pre></div><p>Normally the opt-level = 0.</p>
+<h1 id="rtos-and-other-embedded-specific-libraries">RTOS and other embedded specific libraries</h1>
+<p>RTOS purely written in rust. Even though RTIC is not as stable as something like FREERTOS I found this to be perfect for what I was wanting to do. One of the main things this takes care of is the sharing of data between priority based interrupts, something that can easily lead to race conditions.</p>
+<p>Check it out here: <a href="https://rtic.rs/0.5/book/en/preface.html">RTIC</a></p>
+<p>Embedded Libraries: <a href="https://github.com/rust-embedded/awesome-embedded-rust">Embedded Libs</a></p>
+<h1 id="actual-code-example">Actual Code Example</h1>
+<p>Below is an example of the serial module used in this project.
+You will notice the usage of traits and trait bounds, these are similar constructs to interfaces in c#.</p>
+<p>The mod test section contains all of the unit tests for this module.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-rust" data-lang="rust"><span style="color:#66d9ef">use</span> embedded_hal::{digital, serial};
+
+<span style="color:#66d9ef">use</span> <span style="color:#66d9ef">crate</span>::buf;
+<span style="color:#66d9ef">use</span> buf::{Buf, IBuf};
+
+<span style="color:#66d9ef">use</span> <span style="color:#66d9ef">crate</span>::dev;
+<span style="color:#66d9ef">use</span> dev::IDev;
+
+<span style="color:#66d9ef">use</span> <span style="color:#66d9ef">crate</span>::error;
+<span style="color:#66d9ef">use</span> error::BufErr;
+<span style="color:#66d9ef">use</span> error::DevErr;
+
+<span style="color:#66d9ef">use</span> nb::block;
+
+<span style="color:#e6db74">/// Serial Device
+</span><span style="color:#e6db74"></span><span style="color:#66d9ef">pub</span> <span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">DevSerial</span><span style="color:#f92672">&lt;</span>USART, TXEN, RXEN, SENDBUF, RECVBUF<span style="color:#f92672">&gt;</span> {
+    interface: <span style="color:#a6e22e">USART</span>,
+    tx_en: <span style="color:#a6e22e">TXEN</span>,
+    tx_buf: <span style="color:#a6e22e">SENDBUF</span>,
+    rx_en: <span style="color:#a6e22e">RXEN</span>,
+    rx_buf: <span style="color:#a6e22e">RECVBUF</span>,
+}
+
+<span style="color:#66d9ef">impl</span><span style="color:#f92672">&lt;</span>USART, TXEN, RXEN, SENDBUF, RECVBUF<span style="color:#f92672">&gt;</span> DevSerial<span style="color:#f92672">&lt;</span>USART, TXEN, RXEN, SENDBUF, RECVBUF<span style="color:#f92672">&gt;</span>
+<span style="color:#66d9ef">where</span>
+    USART: <span style="color:#a6e22e">serial</span>::Write<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">u8</span><span style="color:#f92672">&gt;</span> <span style="color:#f92672">+</span> serial::Read<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">u8</span><span style="color:#f92672">&gt;</span>,
+    TXEN: <span style="color:#a6e22e">digital</span>::v2::OutputPin,
+    RXEN: <span style="color:#a6e22e">digital</span>::v2::OutputPin,
+    SENDBUF: <span style="color:#a6e22e">IBuf</span><span style="color:#f92672">&lt;</span><span style="color:#66d9ef">u8</span><span style="color:#f92672">&gt;</span>,
+    RECVBUF: <span style="color:#a6e22e">IBuf</span><span style="color:#f92672">&lt;</span><span style="color:#66d9ef">u8</span><span style="color:#f92672">&gt;</span>,
+{
+    <span style="color:#66d9ef">pub</span> <span style="color:#66d9ef">fn</span> <span style="color:#a6e22e">new</span>(interface: <span style="color:#a6e22e">USART</span>, tx_en: <span style="color:#a6e22e">TXEN</span>, tx_buf: <span style="color:#a6e22e">SENDBUF</span>, rx_en: <span style="color:#a6e22e">RXEN</span>, rx_buf: <span style="color:#a6e22e">RECVBUF</span>, ) -&gt; <span style="color:#a6e22e">Self</span> {
+        DevSerial {
+            interface: <span style="color:#a6e22e">interface</span>,
+            tx_en: <span style="color:#a6e22e">tx_en</span>,
+            tx_buf: <span style="color:#a6e22e">tx_buf</span>,
+            rx_en: <span style="color:#a6e22e">rx_en</span>,
+            rx_buf: <span style="color:#a6e22e">rx_buf</span>,
+        }
+    }
+}
+
+<span style="color:#66d9ef">impl</span><span style="color:#f92672">&lt;</span>USART, TXEN, RXEN, SENDBUF, RECVBUF<span style="color:#f92672">&gt;</span> IDev <span style="color:#66d9ef">for</span> DevSerial<span style="color:#f92672">&lt;</span>USART, TXEN, RXEN, SENDBUF, RECVBUF<span style="color:#f92672">&gt;</span>
+<span style="color:#66d9ef">where</span>
+    USART: <span style="color:#a6e22e">serial</span>::Write<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">u8</span><span style="color:#f92672">&gt;</span> <span style="color:#f92672">+</span> serial::Read<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">u8</span><span style="color:#f92672">&gt;</span>,
+    TXEN: <span style="color:#a6e22e">digital</span>::v2::OutputPin,
+    RXEN: <span style="color:#a6e22e">digital</span>::v2::OutputPin,
+    SENDBUF: <span style="color:#a6e22e">IBuf</span><span style="color:#f92672">&lt;</span><span style="color:#66d9ef">u8</span><span style="color:#f92672">&gt;</span>,
+    RECVBUF: <span style="color:#a6e22e">IBuf</span><span style="color:#f92672">&lt;</span><span style="color:#66d9ef">u8</span><span style="color:#f92672">&gt;</span>,
+{
+    <span style="color:#e6db74">/// Receive Byte
+</span><span style="color:#e6db74"></span>    <span style="color:#66d9ef">fn</span> <span style="color:#a6e22e">get_recv_byte_mut</span>(<span style="color:#f92672">&amp;</span><span style="color:#66d9ef">mut</span> self) -&gt; Result<span style="color:#f92672">&lt;</span>(), DevErr<span style="color:#f92672">&gt;</span> {
+        <span style="color:#75715e">//Read serial port
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">let</span> data <span style="color:#f92672">=</span> block<span style="color:#f92672">!</span>(self.interface.read()).map_err(<span style="color:#f92672">|</span>_<span style="color:#f92672">|</span> DevErr::SerialErr)<span style="color:#f92672">?</span>;
+
+        <span style="color:#75715e">//Check if buffer is overflowing if it is then clear the buffer
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">//This should not happen often unless we get lots of garbage
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">//on the comms line
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">match</span> self.rx_buf.write_val_mut(data) {
+            Ok(_) <span style="color:#f92672">=&gt;</span> {}
+            Err(BufErr::Overflow) <span style="color:#f92672">=&gt;</span> { self.rx_buf.clear_mut()<span style="color:#f92672">?</span>; }
+            _ <span style="color:#f92672">=&gt;</span> panic<span style="color:#f92672">!</span>(<span style="color:#e6db74">&#34;Empty&#34;</span>), <span style="color:#75715e">//This should never happen
+</span><span style="color:#75715e"></span>        };
+
+        Ok(())
+    }
+
+    <span style="color:#e6db74">/// Return receive buffer as slice
+</span><span style="color:#e6db74"></span>    <span style="color:#66d9ef">fn</span> <span style="color:#a6e22e">get_recv_buf_as_slice</span>(<span style="color:#f92672">&amp;</span>self) -&gt; Result<span style="color:#f92672">&lt;&amp;</span>[<span style="color:#66d9ef">u8</span>], DevErr<span style="color:#f92672">&gt;</span> {
+        Ok(self.rx_buf.get_as_slice()<span style="color:#f92672">?</span>)
+    }
+
+    <span style="color:#66d9ef">fn</span> <span style="color:#a6e22e">clear_recv_buf_from_first_to_val_mut</span>(<span style="color:#f92672">&amp;</span><span style="color:#66d9ef">mut</span> self, val: <span style="color:#66d9ef">u16</span>) -&gt; Result<span style="color:#f92672">&lt;</span>(), DevErr<span style="color:#f92672">&gt;</span> {
+        self.rx_buf.clear_from_first_to_val_mut(val)<span style="color:#f92672">?</span>;
+
+        Ok(())
+    }
+
+    <span style="color:#e6db74">/// Clear receive buffer
+</span><span style="color:#e6db74"></span>    <span style="color:#66d9ef">fn</span> <span style="color:#a6e22e">clear_recv_buf_mut</span>(<span style="color:#f92672">&amp;</span><span style="color:#66d9ef">mut</span> self) -&gt; Result<span style="color:#f92672">&lt;</span>(), DevErr<span style="color:#f92672">&gt;</span> {
+        self.rx_buf.clear_mut()<span style="color:#f92672">?</span>;
+
+        Ok(())
+    }
+
+    <span style="color:#e6db74">/// Transmit a single u8 from buffer this will
+</span><span style="color:#e6db74"></span>    <span style="color:#e6db74">/// remove the transmitted byte from the buf
+</span><span style="color:#e6db74"></span>    <span style="color:#e6db74">/// This is useful for interupts
+</span><span style="color:#e6db74"></span>    <span style="color:#66d9ef">fn</span> <span style="color:#a6e22e">transmit_single_u8_mut</span>(<span style="color:#f92672">&amp;</span><span style="color:#66d9ef">mut</span> self) -&gt; Result<span style="color:#f92672">&lt;</span>(), DevErr<span style="color:#f92672">&gt;</span> {
+        block<span style="color:#f92672">!</span>(self.interface.write(self.tx_buf.get_first_val_mut()<span style="color:#f92672">?</span>))
+            .map_err(<span style="color:#f92672">|</span>_<span style="color:#f92672">|</span> DevErr::SerialErr)<span style="color:#f92672">?</span>;
+
+        Ok(())
+    }
+
+    <span style="color:#e6db74">/// Write a single u8 into the send buffer
+</span><span style="color:#e6db74"></span>    <span style="color:#66d9ef">fn</span> <span style="color:#a6e22e">write_u8_to_send_buf_mut</span>(<span style="color:#f92672">&amp;</span><span style="color:#66d9ef">mut</span> self, data: <span style="color:#66d9ef">u8</span>) -&gt; Result<span style="color:#f92672">&lt;</span>(), DevErr<span style="color:#f92672">&gt;</span> {
+        self.tx_buf.write_val_mut(data)<span style="color:#f92672">?</span>;
+
+        Ok(())
+    }
+
+    <span style="color:#e6db74">/// Return send buffer as mut slice
+</span><span style="color:#e6db74"></span>    <span style="color:#66d9ef">fn</span> <span style="color:#a6e22e">get_send_buf_as_mut_slice_mut</span>(<span style="color:#f92672">&amp;</span><span style="color:#66d9ef">mut</span> self) -&gt; Result<span style="color:#f92672">&lt;&amp;</span><span style="color:#66d9ef">mut</span> [<span style="color:#66d9ef">u8</span>], DevErr<span style="color:#f92672">&gt;</span> {
+        Ok(self.tx_buf.get_as_mut_slice_mut()<span style="color:#f92672">?</span>)
+    }
+
+    <span style="color:#e6db74">/// Clear send buffer
+</span><span style="color:#e6db74"></span>    <span style="color:#66d9ef">fn</span> <span style="color:#a6e22e">clear_send_buf_mut</span>(<span style="color:#f92672">&amp;</span><span style="color:#66d9ef">mut</span> self) -&gt; Result<span style="color:#f92672">&lt;</span>(), DevErr<span style="color:#f92672">&gt;</span> {
+        self.tx_buf.clear_mut()<span style="color:#f92672">?</span>;
+
+        Ok(())
+    }
+}
+
+<span style="color:#75715e">#[cfg(test)]</span>
+<span style="color:#66d9ef">mod</span> tests {
+
+    <span style="color:#75715e">#![allow(non_snake_case)]</span>
+
+    <span style="color:#66d9ef">use</span> <span style="color:#66d9ef">super</span>::<span style="color:#f92672">*</span>;
+    <span style="color:#66d9ef">use</span> embedded_hal::digital::v2::{InputPin, OutputPin};
+    <span style="color:#66d9ef">use</span> embedded_hal_mock::pin::{
+        Mock <span style="color:#66d9ef">as</span> PinMock, State <span style="color:#66d9ef">as</span> PinState, Transaction <span style="color:#66d9ef">as</span> PinTransaction,
+    };
+    <span style="color:#66d9ef">use</span> embedded_hal_mock::MockError;
+
+    <span style="color:#66d9ef">use</span> embedded_hal::blocking::serial::Write;
+    <span style="color:#66d9ef">use</span> embedded_hal::serial::Read;
+    <span style="color:#66d9ef">use</span> embedded_hal_mock::serial::{Mock <span style="color:#66d9ef">as</span> SerialMock, Transaction <span style="color:#66d9ef">as</span> SerialTransaction};
+
+    <span style="color:#66d9ef">use</span> heapless::consts::{U128, U16, U256, U32, U64}; <span style="color:#75715e">// type level integer used to specify capacity
+</span><span style="color:#75715e"></span>
+    <span style="color:#75715e">#[test]</span>
+    <span style="color:#66d9ef">fn</span> <span style="color:#a6e22e">callGetRecvByteMut_set3ElementReturn3_expect3ElementsInOrder</span>() {
+        <span style="color:#75715e">// Setup
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">let</span> dio_expectations <span style="color:#f92672">=</span> [PinTransaction::set(PinState::High)];
+
+        <span style="color:#75715e">// Create pin
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">let</span> tx_en_mock <span style="color:#f92672">=</span> PinMock::new(<span style="color:#f92672">&amp;</span>dio_expectations);
+        <span style="color:#66d9ef">let</span> rx_en_mock <span style="color:#f92672">=</span> PinMock::new(<span style="color:#f92672">&amp;</span>dio_expectations);
+
+        <span style="color:#66d9ef">let</span> first <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span>;
+        <span style="color:#66d9ef">let</span> second <span style="color:#f92672">=</span> <span style="color:#ae81ff">20</span>;
+        <span style="color:#66d9ef">let</span> third <span style="color:#f92672">=</span> <span style="color:#ae81ff">30</span>;
+
+        <span style="color:#75715e">// Configure expectations
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">let</span> serial_expectations <span style="color:#f92672">=</span> [SerialTransaction::read_many([first, second, third])];
+
+        <span style="color:#66d9ef">let</span> serial_mock <span style="color:#f92672">=</span> SerialMock::new(<span style="color:#f92672">&amp;</span>serial_expectations);
+
+        <span style="color:#66d9ef">let</span> tx_buf <span style="color:#f92672">=</span> buf::Buf::<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">u8</span>, U16<span style="color:#f92672">&gt;</span>::new();
+        <span style="color:#66d9ef">let</span> rx_buf <span style="color:#f92672">=</span> buf::Buf::<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">u8</span>, U16<span style="color:#f92672">&gt;</span>::new();
+
+        <span style="color:#66d9ef">let</span> <span style="color:#66d9ef">mut</span> rs485 <span style="color:#f92672">=</span> DevSerial {
+            interface: <span style="color:#a6e22e">serial_mock</span>,
+            tx_en: <span style="color:#a6e22e">tx_en_mock</span>,
+            tx_buf: <span style="color:#a6e22e">tx_buf</span>,
+            rx_en: <span style="color:#a6e22e">rx_en_mock</span>,
+            rx_buf: <span style="color:#a6e22e">rx_buf</span>,
+        };
+
+        rs485.get_recv_byte_mut().unwrap();
+        rs485.get_recv_byte_mut().unwrap();
+        rs485.get_recv_byte_mut().unwrap();
+
+        <span style="color:#75715e">//println!(&#34;{:?}&#34;, rs485.get_recv_buf_as_slice().unwrap());
+</span><span style="color:#75715e"></span>
+        <span style="color:#75715e">//Test
+</span><span style="color:#75715e"></span>        assert_eq<span style="color:#f92672">!</span>(first, rs485.get_recv_buf_as_slice().unwrap()[<span style="color:#ae81ff">0</span>]);
+        assert_eq<span style="color:#f92672">!</span>(second, rs485.get_recv_buf_as_slice().unwrap()[<span style="color:#ae81ff">1</span>]);
+        assert_eq<span style="color:#f92672">!</span>(third, rs485.get_recv_buf_as_slice().unwrap()[<span style="color:#ae81ff">2</span>]);
+    }
+
+    <span style="color:#75715e">#[test]</span>
+    <span style="color:#66d9ef">fn</span> <span style="color:#a6e22e">callClearRecvBufMut_set3ElementsThenClear_expectEmptyBuf</span>() {
+        <span style="color:#75715e">// Setup
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">let</span> dio_expectations <span style="color:#f92672">=</span> [PinTransaction::set(PinState::High)];
+
+        <span style="color:#75715e">// Create pin
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">let</span> tx_en_mock <span style="color:#f92672">=</span> PinMock::new(<span style="color:#f92672">&amp;</span>dio_expectations);
+        <span style="color:#66d9ef">let</span> rx_en_mock <span style="color:#f92672">=</span> PinMock::new(<span style="color:#f92672">&amp;</span>dio_expectations);
+
+        <span style="color:#66d9ef">let</span> first <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span>;
+        <span style="color:#66d9ef">let</span> second <span style="color:#f92672">=</span> <span style="color:#ae81ff">20</span>;
+        <span style="color:#66d9ef">let</span> third <span style="color:#f92672">=</span> <span style="color:#ae81ff">30</span>;
+
+        <span style="color:#75715e">// Configure expectations
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">let</span> serial_expectations <span style="color:#f92672">=</span> [SerialTransaction::read_many([first, second, third])];
+
+        <span style="color:#66d9ef">let</span> serial_mock <span style="color:#f92672">=</span> SerialMock::new(<span style="color:#f92672">&amp;</span>serial_expectations);
+
+        <span style="color:#66d9ef">let</span> tx_buf <span style="color:#f92672">=</span> buf::Buf::<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">u8</span>, U16<span style="color:#f92672">&gt;</span>::new();
+        <span style="color:#66d9ef">let</span> rx_buf <span style="color:#f92672">=</span> buf::Buf::<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">u8</span>, U16<span style="color:#f92672">&gt;</span>::new();
+
+        <span style="color:#66d9ef">let</span> <span style="color:#66d9ef">mut</span> rs485 <span style="color:#f92672">=</span> DevSerial {
+            interface: <span style="color:#a6e22e">serial_mock</span>,
+            tx_en: <span style="color:#a6e22e">tx_en_mock</span>,
+            tx_buf: <span style="color:#a6e22e">tx_buf</span>,
+            rx_en: <span style="color:#a6e22e">rx_en_mock</span>,
+            rx_buf: <span style="color:#a6e22e">rx_buf</span>,
+        };
+
+        rs485.get_recv_byte_mut().unwrap();
+        rs485.get_recv_byte_mut().unwrap();
+        rs485.get_recv_byte_mut().unwrap();
+
+        rs485.clear_recv_buf_mut().unwrap();
+
+        <span style="color:#75715e">//println!(&#34;{:?}&#34;, rs485.get_recv_buf_as_slice().unwrap());
+</span><span style="color:#75715e"></span>
+        <span style="color:#66d9ef">let</span> test: <span style="color:#66d9ef">&amp;</span>[<span style="color:#66d9ef">u8</span>] <span style="color:#f92672">=</span> <span style="color:#f92672">&amp;</span>[];
+
+        <span style="color:#75715e">//Test
+</span><span style="color:#75715e"></span>        assert_eq<span style="color:#f92672">!</span>(test, rs485.get_recv_buf_as_slice().unwrap());
+    }
+}
+
+</code></pre></div><h3 id="__and-thats-it-until-the-next-one__"><strong>And Thats it until the next one.</strong></h3>
+
+    </article>
+</div>
+
+
+        
+<nav role="navigation" class="flex-container bottom-menu">
+    
+<hr />
+<p>
+
+
+    
+        <a href="/AkadupTinker/posts">back</a>
+        
+            &#183;
+        
+    
+
+    
+        
+            <a href="/AkadupTinker/posts">Posts</a>
+        
+    
+    
+        
+            &#183; 
+            <a href="/AkadupTinker/gallery">Gallery</a>
+        
+            &#183; 
+            <a href="/AkadupTinker/about">Wayne who?</a>
+        
+    
+    &#183; 
+    <a href="/AkadupTinker/">
+        main
+    </a>
+
+</p>
+</nav>
+
+    </main>
+    
+    <footer class="flex-container footer"></footer>
+    
+    
+</body>
+
+</html>

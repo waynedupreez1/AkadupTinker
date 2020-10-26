@@ -6,17 +6,28 @@
     <description>Recent content in cad on Akadup Tinker Site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 11 Oct 2020 08:00:00 +1300</lastBuildDate>
+    <lastBuildDate>Mon, 26 Oct 2020 14:35:00 +1300</lastBuildDate>
     
 	<atom:link href="https://waynedupreez1.github.io/AkadupTinker/tags/cad/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Freecad NAS enclosure</title>
-      <link>https://waynedupreez1.github.io/AkadupTinker/posts/2020_10_11_cad_for_nas/</link>
+      <title>Freecad NAS Enclosure Part2</title>
+      <link>https://waynedupreez1.github.io/AkadupTinker/posts/2020_10_26_cad_for_nas_part_2/</link>
+      <pubDate>Mon, 26 Oct 2020 14:35:00 +1300</pubDate>
+      
+      <guid>https://waynedupreez1.github.io/AkadupTinker/posts/2020_10_26_cad_for_nas_part_2/</guid>
+      <description>Description Okay its been a few weeks since I posted about my adventure of using Freecad to build a Nas enclosure this is part 2.
+For the people that has not read the other post the three bullet point summary:
+ I wanted to learn some cad. I have access to a 3D printer. I am building a Nas.  Enclosure As mentioned in the previous post the enclosure is build using 3 sections:</description>
+    </item>
+    
+    <item>
+      <title>Freecad NAS Enclosure Part1</title>
+      <link>https://waynedupreez1.github.io/AkadupTinker/posts/2020_10_11_cad_for_nas_part_1/</link>
       <pubDate>Sun, 11 Oct 2020 08:00:00 +1300</pubDate>
       
-      <guid>https://waynedupreez1.github.io/AkadupTinker/posts/2020_10_11_cad_for_nas/</guid>
+      <guid>https://waynedupreez1.github.io/AkadupTinker/posts/2020_10_11_cad_for_nas_part_1/</guid>
       <description>Description I love to tinker with things, generally my computers and sometimes when you tinker you tend to screw up and loose data, sometimes very important data like your wedding photos and everything else.
 Yes you read correctly I lost my wedding photos, all of it. This happened whilst moving from linux to windows and not backing up properly, yeah I know pretty stupid.
 Fortunately with some more tinkering and running some recovery software for a few days I managed to recover all my photos.</description>

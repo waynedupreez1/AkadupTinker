@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+
+<meta name="description" content="The site with Tinker projects">
+<title>
+    Freecad NAS Enclosure Part2 - Akadup Tinker Site
+</title>
+
+
+<link rel="shortcut icon" href="/AkadupTinker/images/favicon.ico">
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/AkadupTinker/css/main.min.353ca4aba7f8dd7881fd0d5dfb3060f96bcc2f6367a8e1a2cbaba5d330d4baeb.css" integrity="sha256-NTykq6f43XiB/Q1d&#43;zBg&#43;WvML2NnqOGiy6ul0zDUuus=" crossorigin="anonymous" media="screen">
+
+
+
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Didact+Gothic">
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://waynedupreez1.github.io/AkadupTinker/images/wolf-track-512-317041.png"/>
+
+<meta name="twitter:title" content="Freecad NAS Enclosure Part2"/>
+<meta name="twitter:description" content="Description Okay its been a few weeks since I posted about my adventure of using Freecad to build a Nas enclosure this is part 2.
+For the people that has not read the other post the three bullet point summary:
+ I wanted to learn some cad. I have access to a 3D printer. I am building a Nas.  Enclosure As mentioned in the previous post the enclosure is build using 3 sections:"/>
+
+<meta property="og:title" content="Freecad NAS Enclosure Part2" />
+<meta property="og:description" content="Description Okay its been a few weeks since I posted about my adventure of using Freecad to build a Nas enclosure this is part 2.
+For the people that has not read the other post the three bullet point summary:
+ I wanted to learn some cad. I have access to a 3D printer. I am building a Nas.  Enclosure As mentioned in the previous post the enclosure is build using 3 sections:" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://waynedupreez1.github.io/AkadupTinker/posts/2020_10_26_cad_for_nas_part_2/" />
+<meta property="og:image" content="https://waynedupreez1.github.io/AkadupTinker/images/wolf-track-512-317041.png"/>
+<meta property="article:published_time" content="2020-10-26T14:35:00+13:00" />
+<meta property="article:modified_time" content="2020-10-26T14:35:00+13:00" /><meta property="og:site_name" content="AkadupTinker" />
+
+
+    
+
+    
+    
+    
+    <title>
+        
+        Freecad NAS Enclosure Part2
+        
+    </title>
+</head>
+
+<body>
+    
+    
+    <header class="wrap flex-container">
+        <h1>Freecad NAS Enclosure Part2</h1>
+    </header>
+    
+    <main class="wrap">
+        
+<div class="flex-container">
+    <aside role="complementary">
+        Mon Oct 26, 2020 &#183; 435 words
+        <div class="tag-container">
+            
+            
+            <span class="tag">
+                <a href="/AkadupTinker/tags/hardware/">
+                    hardware
+                </a>
+            </span>
+            
+            
+            
+            <span class="tag">
+                <a href="/AkadupTinker/tags/nas/">
+                    nas
+                </a>
+            </span>
+            
+            
+            
+            <span class="tag">
+                <a href="/AkadupTinker/tags/cad/">
+                    cad
+                </a>
+            </span>
+            
+            
+        </div>
+    </aside>
+    <hr />
+    <article role="article">
+        <h1 id="description">Description</h1>
+<p>Okay its been a few weeks since I posted about my adventure of using Freecad to build a Nas enclosure this is part 2.</p>
+<p>For the people that has not read the other post the three bullet point summary:</p>
+<ul>
+<li>I wanted to learn some cad.</li>
+<li>I have access to a 3D printer.</li>
+<li>I am building a Nas.</li>
+</ul>
+<h1 id="enclosure">Enclosure</h1>
+<p>As mentioned in the previous post the enclosure is build using 3 sections:</p>
+<ul>
+<li>
+<h2 id="core">Core</h2>
+</li>
+</ul>
+<p><img src="/AkadupTinker/gallery/nas_core_v2.png" alt="NasCorev2"></p>
+<p><img src="/AkadupTinker/gallery/nas_core_photo.jpeg" alt="NasCorePhoto"></p>
+<p>This contains:</p>
+<ol>
+<li>2 x 4TB 3.5 inch HDD&rsquo;s - These will most probably going to be setup in a raid 1 config with the now stable ZFS file system.</li>
+<li>Raspberry Pi v3 model B - Probably running ubuntu server or arch not sure yet.</li>
+<li>Sata to USB convertors - Used to convert internal HDD&rsquo;s to USB</li>
+<li>2 x PSU&rsquo;s - 24V to 12V for the HDD&rsquo;s and 24V to 5V for the PI</li>
+<li>2 x Connectors - One ethernet and one USB used as the 24V input.</li>
+</ol>
+<p>Also excuse the dirty table and cup, I need that coffee for the after work activities!</p>
+<ul>
+<li>
+<h2 id="inner">Inner</h2>
+</li>
+</ul>
+<p><img src="/AkadupTinker/gallery/nas_core_inner_v2.png" alt="NasCoreInnerv2"></p>
+<p><img src="/AkadupTinker/gallery/nas_inner_led_photo.jpg" alt="NasInnerPhoto"></p>
+<p>This contains all the LED&rsquo;s.</p>
+<ul>
+<li>
+<h2 id="shell">Shell</h2>
+</li>
+</ul>
+<p>This is still not done but I will get to it.</p>
+<h1 id="software">Software</h1>
+<ul>
+<li>
+<h2 id="working">Working</h2>
+</li>
+</ul>
+<p>List of softwares currently working.</p>
+<ol>
+<li>Arch Linux 32bit for RPi v3 -</li>
+</ol>
+<p>This was pretty basic. Download the image, burn onto the SD card, pop into Pi. I have to say the arch wiki is probably one of the best resources around.</p>
+<ol start="2">
+<li>ZFS -</li>
+</ol>
+<p>A little bit more interesting. I could not install this via pacman without compiling all the packages from source. It seems like the pre-built binaries do not exist for armv7h. I also had a fun time figuring out how to auto mount as it seems like the USB to Sata convertors I use take a bit of time to initialize and get going.</p>
+<ol start="3">
+<li>Transmission -</li>
+</ol>
+<p>For downloading torrents via a web interface this is great. I can now download torrents on other computers and push it to the nas for downloading all via transmissions builtin web interface.</p>
+<ol start="4">
+<li>Smartctl -</li>
+</ol>
+<p>This runs a service that monitors hard drive health and emails if anything is amis.</p>
+<ol start="5">
+<li>Pi-Hole -</li>
+</ol>
+<p>A DNS level ad blocker for those annoying youtube ads when using your smart TV. Its not perfect but it helps. This has a few packages that needs to be compiled.</p>
+<ol start="6">
+<li>Rpi-ws281x-python -</li>
+</ol>
+<p>Python library for controlling the addressable led&rsquo;s.</p>
+<ul>
+<li>
+<h2 id="not-done">Not Done</h2>
+</li>
+</ul>
+<ol>
+<li>LED patterns -</li>
+</ol>
+<p>I have tested the led&rsquo;s with the test scripts and they seem to work but I need to do some work on generating the patterns I want.</p>
+<h3 id="__and-thats-it-until-the-next-one__"><strong>And Thats it until the next one.</strong></h3>
+
+    </article>
+</div>
+
+
+        
+<nav role="navigation" class="flex-container bottom-menu">
+    
+<hr />
+<p>
+
+
+    
+        <a href="/AkadupTinker/posts">back</a>
+        
+            &#183;
+        
+    
+
+    
+        
+            <a href="/AkadupTinker/posts">Posts</a>
+        
+    
+    
+        
+            &#183; 
+            <a href="/AkadupTinker/gallery">Gallery</a>
+        
+            &#183; 
+            <a href="/AkadupTinker/about">Wayne who?</a>
+        
+    
+    &#183; 
+    <a href="/AkadupTinker/">
+        main
+    </a>
+
+</p>
+</nav>
+
+    </main>
+    
+    <footer class="flex-container footer"></footer>
+    
+    
+</body>
+
+</html>
